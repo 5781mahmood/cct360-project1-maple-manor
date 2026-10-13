@@ -25,8 +25,5 @@ A little mystery game. You walk around Maple Manor, find clues, talk to people, 
 - if / else if for unlocking and different endings
 - click listeners on buttons
 
-## Pictures
-From Unsplash (free). See `images/CREDITS.txt`.
-
 ## Group
-[add your names here]
+Mahmood Sultan & Mohamad El Chaar
