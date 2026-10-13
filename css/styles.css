@@ -1,0 +1,227 @@
+/* maple manor styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #2a2420;
+  color: #2c241c;
+}
+
+.scene {
+  display: none;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 70px;
+}
+
+.scene.active {
+  display: block;
+}
+
+.scene-img {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin: 0 auto 16px auto;
+  border: 3px solid #5a4a3c;
+}
+
+.box {
+  max-width: 720px;
+  margin: 0 auto;
+  background-color: #f0e6d8;
+  padding: 22px 24px;
+  border: 2px solid #6b5748;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  color: #3d2918;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  margin-top: 0;
+  color: #3d2918;
+}
+
+h3 {
+  font-family: Georgia, serif;
+  color: #7a3030;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.case-tag {
+  font-size: 13px;
+  color: #8b4a3a;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.note {
+  font-size: 15px;
+  color: #4f4338;
+  border-left: 3px solid #9a7b5a;
+  padding-left: 12px;
+}
+
+.hint {
+  font-size: 14px;
+  color: #6a5a4a;
+  font-style: italic;
+}
+
+.msg {
+  min-height: 48px;
+  background-color: #e8ddd0;
+  padding: 10px 12px;
+  margin-top: 14px;
+  border: 1px solid #b09a82;
+  font-size: 16px;
+}
+
+button {
+  background-color: #5c4638;
+  color: #f5efe8;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 6px 6px 6px 0;
+  font-family: Arial, sans-serif;
+}
+
+button:hover {
+  background-color: #7a5e4a;
+}
+
+button:disabled,
+button.locked {
+  background-color: #9a8c7e;
+  cursor: not-allowed;
+}
+
+.back {
+  background-color: #6e5a48;
+  margin-top: 16px;
+}
+
+.clue-btn {
+  background-color: #7a4538;
+}
+
+.clue-btn.found {
+  background-color: #5d6b50;
+  text-decoration: line-through;
+}
+
+.accuse {
+  background-color: #6e2e2e;
+}
+
+.nav-btns {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.clue-row {
+  margin-top: 8px;
+}
+
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3a3028;
+  color: #f0e6d8;
+  padding: 10px 16px;
+  z-index: 20;
+  border-bottom: 2px solid #8b6f55;
+}
+
+.hud p {
+  margin: 0;
+  margin-right: 14px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.hud button {
+  margin: 0;
+  padding: 7px 12px;
+  font-size: 13px;
+  background-color: #8b6f55;
+  color: #1e1814;
+}
+
+.hidden {
+  display: none;
+}
+
+.hud.hidden {
+  display: none;
+}
+
+ul#clueList {
+  padding-left: 20px;
+}
+
+ul#clueList li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+ul#clueList li.empty {
+  color: #887868;
+  list-style: none;
+  margin-left: -12px;
+}
+
+.ending {
+  margin-top: 18px;
+  padding: 14px;
+  background-color: #e4d5c4;
+  border: 2px solid #6e2e2e;
+}
+
+@media (max-width: 600px) {
+  .scene {
+    padding: 12px;
+    padding-top: 90px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .box {
+    padding: 16px;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .hud p {
+    display: block;
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Curious Case of Maple Manor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- top bar shows after you start -->
+  <div id="hud" class="hud hidden">
+    <p>Clues: <span id="clueCount">0</span>/4</p>
+    <p>Interviewed: <span id="interviewCount">0</span>/3</p>
+    <button id="boardBtn" type="button">Evidence Board</button>
+  </div>
+
+  <!-- scene 1 -->
+  <section id="scene-briefing" class="scene active">
+    <img src="images/manor.jpg" alt="Old manor house at dusk" class="scene-img">
+    <div class="box">
+      <p class="case-tag">CASE FILE #07</p>
+      <h1>The Curious Case of Maple Manor</h1>
+      <p>
+        Sunday evening. Edward Harlan was found dead in his study.
+        Five people were in the house. One of them is lying.
+      </p>
+      <p class="note">
+        You are the detective. Look around. Collect clues.
+        Talk to people. When you think you know who did it, accuse them.
+      </p>
+      <button id="startBtn" type="button">Open the case</button>
+    </div>
+  </section>
+
+  <!-- scene 2 -->
+  <section id="scene-hallway" class="scene">
+    <img src="images/hallway.jpg" alt="Manor hallway" class="scene-img">
+    <div class="box">
+      <h2>Hallway</h2>
+      <p>Where do you want to go?</p>
+      <div class="nav-btns">
+        <button id="goStudy" type="button">Study (crime scene)</button>
+        <button id="goKitchen" type="button">Kitchen</button>
+        <button id="goLiving" type="button">Living Room</button>
+        <button id="goBoard" type="button">Evidence Board</button>
+        <button id="goAccuse" type="button" class="locked" disabled>Make an Accusation</button>
+      </div>
+      <p id="hallwayHint" class="hint">Hint: explore the study first. You need clues before you can accuse anyone.</p>
+    </div>
+  </section>
+
+  <!-- scene 3 -->
+  <section id="scene-study" class="scene">
+    <img src="images/study.jpg" alt="The study where Harlan died" class="scene-img">
+    <div class="box">
+      <h2>The Study</h2>
+      <p>Harlan was shot in the forehead. Click anything that looks useful.</p>
+
+      <div class="clue-row">
+        <button id="clueGun" type="button" class="clue-btn">Empty holster on the desk</button>
+        <button id="clueClock" type="button" class="clue-btn">Clock stopped at 7:40</button>
+        <button id="clueNote" type="button" class="clue-btn">Torn note under the chair</button>
+      </div>
+
+      <p id="studyMsg" class="msg"></p>
+      <button id="backFromStudy" type="button" class="back">Back to hallway</button>
+    </div>
+  </section>
+
+  <!-- scene 4 -->
+  <section id="scene-kitchen" class="scene">
+    <img src="images/kitchen.jpg" alt="Manor kitchen" class="scene-img">
+    <div class="box">
+      <h2>Kitchen</h2>
+      <p>The cook, Mr. Pell, is wiping the counters. He looks nervous.</p>
+
+      <button id="talkCook" type="button">Ask the cook what he was doing</button>
+      <button id="cluePan" type="button" class="clue-btn">Look at the frying pan</button>
+
+      <p id="kitchenMsg" class="msg"></p>
+      <button id="backFromKitchen" type="button" class="back">Back to hallway</button>
+    </div>
+  </section>
+
+  <!-- scene 5 -->
+  <section id="scene-living" class="scene">
+    <img src="images/livingroom.jpg" alt="Living room with fireplace" class="scene-img">
+    <div class="box">
+      <h2>Living Room</h2>
+      <p>Three people are waiting. Choose who to question.</p>
+
+      <div class="nav-btns">
+        <button id="askWife" type="button">Mrs. Harlan (wife)</button>
+        <button id="askButler" type="button">Mr. Graves (butler)</button>
+        <button id="askGardener" type="button">Sam (gardener)</button>
+      </div>
+
+      <p id="livingMsg" class="msg"></p>
+      <button id="backFromLiving" type="button" class="back">Back to hallway</button>
+    </div>
+  </section>
+
+  <!-- scene 6 -->
+  <section id="scene-board" class="scene">
+    <img src="images/evidence.jpg" alt="Papers and notes on a desk" class="scene-img">
+    <div class="box">
+      <h2>Evidence Board</h2>
+      <p>Stuff you've found so far:</p>
+      <ul id="clueList">
+        <li class="empty">Nothing yet. Go look around.</li>
+      </ul>
+      <p id="boardNote" class="hint"></p>
+      <button id="backFromBoard" type="button" class="back">Back to hallway</button>
+    </div>
+  </section>
+
+  <!-- scene 7 -->
+  <section id="scene-accuse" class="scene">
+    <img src="images/notebook.jpg" alt="Detective notebook" class="scene-img">
+    <div class="box">
+      <h2>Make Your Accusation</h2>
+      <p>Who killed Edward Harlan?</p>
+
+      <div class="nav-btns">
+        <button id="accuseWife" type="button" class="accuse">Mrs. Harlan</button>
+        <button id="accuseButler" type="button" class="accuse">Mr. Graves</button>
+        <button id="accuseCook" type="button" class="accuse">Mr. Pell (cook)</button>
+        <button id="accuseGardener" type="button" class="accuse">Sam (gardener)</button>
+      </div>
+
+      <div id="ending" class="ending hidden">
+        <h3 id="endingTitle"></h3>
+        <p id="endingText"></p>
+        <button id="restartBtn" type="button">Restart case</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
